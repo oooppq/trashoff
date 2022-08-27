@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div>
+    {% for quest in quests %}
+        <section>
+            <a href="{% url 'quest_detail' quest.id %}">
+                <p>{{ quest.place_id }}</p>
+                <p>{{ quest.title }}</p>
+                <p>{{ quest.content }}</p>
+                <p>{{ quest.reward }}</p>
+            </a>
+        </section>
+    {% endfor %}
+</div>
+
+{% endblock %}

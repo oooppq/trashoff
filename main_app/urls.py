@@ -3,5 +3,5 @@ from .views import *
 from django.conf import settings
 
 urlpatterns = [
-    path('', univ_rank, name='univ_rank'),
+    path('<int:map_number>/trashcans', get_trashcans, name='get_trashcans'),
 ]

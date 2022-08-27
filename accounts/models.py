@@ -11,4 +11,3 @@ class User(AbstractUser):
     comments = models.TextField(null=True)
     date = models.DateTimeField(auto_now_add=True, null=True)
     
-    
