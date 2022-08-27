@@ -12,9 +12,10 @@ class Trashcan(models.Model):
     trashcan_number = models.IntegerField() # 쓰레기통 번호
 
 class University(models.Model):
-    univ_name = models.CharField(max_length=20, null=True)
-    student_num = models.IntegerField(default=0, null=True)
-    throw_num = models.IntegerField(default=0, null=True)
+    name = models.CharField(max_length=20, null=True) # 학교 이름
+    photo = models.ImageField(null=True, blank=True, upload_to="univ_photo") # 학교 사진
+    student_num = models.IntegerField(default=0, null=True) # 학교에 속한 학생 인원
+    throw_num = models.IntegerField(default=0, null=True) # 쓰레기 버린 횟수
     
 class Throwing(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE) # User ID
@@ -22,5 +23,5 @@ class Throwing(models.Model):
     time = models.DateTimeField(auto_now_add=True) # 쓰레기를 버린 시간
 
 class Quest(models.Model):
-    place_id = models.ForeignKey(Place, on_delete=models.CASCADE)
-    content = models.CharField(max_length=200)
+    place_id = models.ForeignKey(Place, on_delete=models.CASCADE) # 퀘스트가 이뤄지는 장소
+    content = models.CharField(max_length=200) # 퀘스트 설명

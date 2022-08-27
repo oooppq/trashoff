@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    {% for univ in univs %}
+        <h2>{{ univ.name }}</h2>
+        <img src="{{ univ.photo.url }}" alt="univ_picture">
+        <p>{{ univ.student_num }}</p>
+        <p>{{ univ.throw_num }}</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
