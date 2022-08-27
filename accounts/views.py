@@ -32,7 +32,9 @@ def register(request):
         email = request.POST['email']
         nickname = request.POST['nickname']
         university = request.POST['university']
-        photo = request.FILES['photo']
+        try:
+            photo = request.FILES['photo']
+        except: photo = None
         user = User.objects.create_user(username=username,
                                         password=password,
                                         email=email,
@@ -53,11 +55,13 @@ def profileModify(request):
         
         if request.POST['password'] != '':  
             if request.POST['password'] == request.POST['again']:
-                user.password = request.POST['password']
+                user.set_password(request.POST['password'])
+                
         user.email = request.POST['email']
         user.nickname = request.POST['nickname']
         if request.POST['university'] != 'none':
             user.university = request.POST['university']
         user.comments = request.POST['comments']
         user.save()
+        print(user.password)
         return redirect('mypage')

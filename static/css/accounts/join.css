@@ -1,0 +1,101 @@
+@font-face {
+    font-family: Campton;
+    src: url('../static/fonts/Campton-BoldDEMO.otf') format('opentype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Sandol;
+    src: url('../static/fonts/AppleSDGothicNeoM.ttf');
+}
+
+.membership {
+    position: absolute;
+    width: 303px;
+    height: 122px;
+    left: 35px;
+    top: 50px;
+
+    font-family: 'Campton';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 61px;
+
+    color: #63EA76;
+}
+
+
+.login_logo {
+    position: absolute;
+    width: 150px;
+
+    left: 35px;
+    top: 210px;
+
+}
+
+.logo1 {
+
+    position: absolute;
+    left: 271px;
+    top: 320px;
+}
+
+.logo3 {
+
+    position: absolute;
+    left: 312px;
+    top: 320px;
+}
+
+.email_box {
+    position: absolute;
+    left: 33px;
+    top: 460px;
+    width: 325px;
+
+    font-family: Sandol;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+
+
+    color: #000000;
+}
+
+.email {
+    padding-left: 8px;
+
+}
+
+hr {
+    margin: 15px 0;
+}
+
+button {
+    width: 325px;
+    height: 57px;
+
+    margin-top: 12px;
+    background: #61DF72;
+    border-radius: 8px;
+    font-family: Sandol;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    border: 1px solid white;
+
+    letter-spacing: 0.12em;
+
+    color: #FFFFFF;
+}
+
+button:hover {
+    background-color: #FFFFFF;
+    color: #61DF72;
+    border: 1.5px solid #61DF72;
+
+}
