@@ -1,0 +1,18 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+  {% for trashcan in trashcans %}
+  <a href="{% url 'increase_trash' 2%}">
+  <button> {{ trashcan.trashcan_number }}</button>
+  </a>
+  </br>
+  {% endfor %}
+    
+</div>
+
+{% endblock %}
+
