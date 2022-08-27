@@ -36,10 +36,10 @@
       </section>
 
       <div class="NavBar">
-        <a href=""><img src="{% static 'img/mapL.svg' %}"/></a>
+        <a href="{% url 'get_trashcans' 1 %}"><img src="{% static 'img/mapL.svg' %}"/></a>
         <a href="{% url 'rank' %}"><img src="{% static 'img/graphB.svg' %}"/></a>
         <a href="{% url 'quest' %}"><img src="{% static 'img/questL.svg' %}"/></a>
-        <a href="">
+        <a href="{% url 'mypage' %}">
           <div id="profile">
             {% if user.is_authenticated %}
               <img src="{{ user.photo.url }}" alt="">
