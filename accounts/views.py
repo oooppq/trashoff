@@ -61,3 +61,6 @@ def profileModify(request):
         user.comments = request.POST['comments']
         user.save()
         return redirect('mypage')
+
+def congrats(request):
+    return render(request, 'congrats.html')
