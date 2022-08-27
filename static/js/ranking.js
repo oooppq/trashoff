@@ -8,7 +8,7 @@ $(".univ_box").hide();
 var result = {
   H: {
     color: "#011241",
-    univ: "HONGIk",
+    univ: "HONGIK",
     name: "HONGIK UNIVERSITY",
     img: "../../static/img/trashcan_H.png",
   },
