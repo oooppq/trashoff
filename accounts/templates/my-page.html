@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+  {% load static %}
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,10 +21,12 @@
       </div>
       <div class="profile">
         {% if user.photo %}
-        <div class="circle"></div>
+        <div class="circle">
+          <img class="circle" src="{{ user.photo.url }}" alt="no-image">
+        </div>
         <div class="col">
           <span id="green3">{{ user.nickname }}</span>
-          <div class="setting"><a href="{% url 'profile-modify' %}">개인정보 수정</a>
+          <div class="setting"><a href="{% url 'profile-modify' %}">프로필 편집</a>
           </div>
         
         </div>
@@ -52,9 +56,9 @@
       <a href="{% url 'login' %}" class="">로그인</a>
     {% endif %}
     <div class="NavBar">
-      <img src="../static/mapL.svg" />
-      <img src="../static/graphL.svg" />
-      <img src="../static/questL.svg" />
+      <img src="{% static 'mapB.svg' %}" />
+      <img src="{% static 'graphL.svg' %}" />
+      <img src="{% static 'questL.svg' %}" />
       <div id="profile" />
       <!-- <button onclick="location.href='map3.html'"></button> -->
     </div>
@@ -62,12 +66,12 @@
   <style>
     @font-face {
       font-family: Campton;
-      src: url("../static/fonts/Campton-BoldDEMO.otf") format("opentype");
+      src: url("{% static 'fonts/Campton-BoldDEMO.otf' %}") format("opentype");
       font-weight: bold;
     }
     @font-face {
       font-family: Sandol;
-      src: url("../static/fonts/AppleSDGothicNeoM.ttf");
+      src: url("{% static 'fonts/AppleSDGothicNeoM.ttf' %}");
     }
     .Wrapper {
       display: flex;
