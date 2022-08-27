@@ -2,7 +2,7 @@ from code import interact
 import string
 from django.db import models
 from accounts.models import User
-from rank_app.models import Place
+from main_app.models import Place
 # Create your models here.
 
 
