@@ -38,7 +38,7 @@
         {% endif %}
       </p>
       <p>{{ user.university }}</p>
-      <a href=""></a>
+      <a href="{% url 'profile-modify' %}">개인정보 수정</a>
       <a href="{% url 'logout' %}" class="">로그아웃</a>
     {% else %}
       로그인 안돼있어

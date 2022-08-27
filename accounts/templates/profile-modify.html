@@ -9,20 +9,24 @@
   </head>
 
   <body>
-    <form action="{% url 'register' %}" method='POST' enctype="multipart/form-data">
+    <form action="{% url 'profile-modify' %}" method='POST'>
       {% csrf_token %}
-      <input type="text" placeholder='아이디' name='username'><br>
       <input type="password" placeholder='비밀번호' name='password'><br>
       <input type="password" placeholder='재입력' name='again'><br>
-      <input type="text" placeholder='example@email.com' name='email'><br>
-      <input type="text" placeholder='닉네임' name='nickname'><br>
-      <input type="file" name="photo"><br>
+      <input type="text" placeholder='example@email.com' name='email' value="{{ user.email }}"><br>
+      <input type="text" placeholder='닉네임' name='nickname' value="{{ user.nickname }}"><br>
       <select name="university">
+        <option value="none">=== 선택 ===</option>
         <option value="서강">서강대학교</option>
         <option value="이화">이화여자대학교</option>
         <option value="연세">연세대학교</option>
         <option value="홍익">홍익대학교</option>
       </select><br>
+      <textarea name="comments" id="" cols="30" rows="10">
+        {% if user.comments %}{{ user.comments }}
+        {% else %}
+        {% endif %}
+      </textarea>
       <input type="submit">
     </form>
   </body>

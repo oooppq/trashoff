@@ -44,3 +44,20 @@ def register(request):
     
 def myPage(request):
     return render(request, 'my-page.html')
+
+def profileModify(request):
+    if request.method == "GET":
+        return render(request, 'profile-modify.html')
+    elif request.method == "POST":
+        user = request.user
+        
+        if request.POST['password'] != '':  
+            if request.POST['password'] == request.POST['again']:
+                user.password = request.POST['password']
+        user.email = request.POST['email']
+        user.nickname = request.POST['nickname']
+        if request.POST['university'] != 'none':
+            user.university = request.POST['university']
+        user.comments = request.POST['comments']
+        user.save()
+        return redirect('mypage')
