@@ -69,6 +69,9 @@ TEMPLATES = [
     },
 ]
 
+# 확장한 유저 객체를 사용할 것으로 명시 
+AUTH_USER_MODEL = 'accounts.User'
+
 WSGI_APPLICATION = 'trashoff.wsgi.application'
 
 
