@@ -1,49 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-
   <body>
-    {% if user.is_authenticated %}
-      로그인 돼있어
-      <p>
+    <div class="Wrapper">
+      {% if user.is_authenticated %}
+      <div class="nickname">
         {% if user.comments %}
-          {{ user.comments }}
+        <span id="red">I am</span>
+        <span id="red">@{{ user.id }}</span>
         {% else %}
           소개글을 입력해주세요!
         {% endif %}
-      </p>
-      <p>
+      </div>
+      <div class="profile">
         {% if user.photo %}
-          <img src="{{ user.photo.url }}" alt="" width='60px;' height='60px;'></p>
-      {% else %}
-        <p>사진 없어잉</p>
-      {% endif %}
-      <p>{{ user.nickname }}</p>
-      <p>{{ user.level }}</p>
-      <p>
-        {% if user.cleanTrashNumber <= 5 %}
-          새싹
-        {% elif user.cleanTrashNumber <= 10 %}
-          가지
-        {% elif user.cleanTrashNumber <= 15 %}
-          나무
+        <div class="circle"></div>
+        <div class="col">
+          <span id="green3">{{ user.nickname }}</span>
+          <div class="setting"><a href="{% url 'profile-modify' %}">개인정보 수정</a>
+          </div>
+        
+        </div>
         {% else %}
-          열매
+        <p>등록된 사진이 없습니다.</p>
         {% endif %}
-      </p>
-      <p>{{ user.university }}</p>
-      <a href="{% url 'profile-modify' %}">개인정보 수정</a>
-      <a href="{% url 'logout' %}" class="">로그아웃</a>
+      </div>
+      <div class="info">
+        <span id="green">LV.{{ user.level }}</span>
+        <span id="green2">
+          {% if user.cleanTrashNumber <= 5 %}
+            새싹
+          {% elif user.cleanTrashNumber <= 10 %}
+            가지
+          {% elif user.cleanTrashNumber <= 15 %}
+            나무
+          {% else %}
+            열매
+          {% endif %}
+        </span>
+        <span id="green">2,700 times</span>
+        <span id="red">{{ user.university }} univ.</span>
+      </div>
+    </div>
     {% else %}
-      로그인 안돼있어
+      로그인 해주세요.
       <a href="{% url 'login' %}" class="">로그인</a>
     {% endif %}
+    <div class="NavBar">
+      <img src="../static/mapL.svg" />
+      <img src="../static/graphL.svg" />
+      <img src="../static/questL.svg" />
+      <div id="profile" />
+      <!-- <button onclick="location.href='map3.html'"></button> -->
+    </div>
   </body>
+  <style>
+    @font-face {
+      font-family: Campton;
+      src: url("../static/fonts/Campton-BoldDEMO.otf") format("opentype");
+      font-weight: bold;
+    }
+    @font-face {
+      font-family: Sandol;
+      src: url("../static/fonts/AppleSDGothicNeoM.ttf");
+    }
+    .Wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
+    .NavBar {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 110px;
+      border-top: 4px solid #61df72;
+      width: 100%;
+    }
+
+    #profile {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: #61df72 2px solid;
+      background-color: greenyellow;
+    }
+
+    #red {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Campton;
+      font-size: 40px;
+      color: #ad0f04;
+    }
+
+    #green {
+      color: #61df72;
+      font-size: 40px;
+      font-family: Campton;
+    }
+
+    #green2 {
+      color: #377241;
+      font-family: Campton;
+      font-size: 40px;
+    }
+
+    #green3 {
+      color: #61df72;
+      font-size: 44px;
+      font-family: Sandol;
+    }
+
+    .nickname {
+      display: flex;
+      flex-direction: column;
+      margin-top: 50px;
+    }
+
+    .profile {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 50px;
+      font-family: Sandol;
+      width: 250px;
+    }
+
+    .circle {
+      background-color: gray;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
+    .setting {
+      border: solid;
+      padding: 4px;
+      border-radius: 8px;
+      border: none;
+      background-color: rgba(91, 230, 239, 0.2);
+    }
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      margin-top: 70px;
+    }
+  </style>
 </html>
