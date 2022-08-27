@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    {% for quest in quests %}
+        <p>{{ quest.place_id }}</p>
+        <p>{{ quest.title }}</p>
+        <p>{{ quest.content }}</p>
+        <p>{{ quest.reward }}</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

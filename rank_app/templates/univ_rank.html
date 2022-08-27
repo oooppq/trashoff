@@ -2,12 +2,15 @@
 
 {% block content %}
 
+<h1>Ranking Sinchon</h1>
 <div>
     {% for univ in univs %}
-        <h2>{{ univ.name }}</h2>
-        <img src="{{ univ.photo.url }}" alt="univ_picture">
-        <p>{{ univ.student_num }}</p>
+        {{ forloop.counter }}
+        <p>{{ univ.name }}</p>
         <p>{{ univ.throw_num }}</p>
+        <section>
+            <p>""</p>
+        </section>
     {% endfor %}
 </div>
 
