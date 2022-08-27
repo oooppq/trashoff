@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static 'css/rank.css' %}">
+
+    </head>
+
+    <body>
+        <div class="container">
+            <section class="ranking">
+                <img class="logo" src="{% static symbol 1.png' %}" alt="no-image">
+                <span class="title_ranking">Ranking</span>
+                <span class="title_sinchon">sinchon</span>
+            </section>
+            <section class="ranking_box">
+                <ol>
+                    <li class="r1">
+                        <img class="color_img1" src="{% static 'rank1.png' %}" alt="no-image"><span class="r1_univ">HONGIk</span>
+                    </li>
+                    <li class="r2"><img class="color_img2" src="{% static 'rank2.png' %}" alt="no-image"><span
+                            class="r2_univ">SOGANG</span></li>
+                    <li class="r3"> <img class="color_img3" src="{% static 'rank3.png' %}" alt="no-image"><span
+                            class="r3_univ">YONSEI</span></li>
+                    <li class="r4"> <img class="color_img4" src="{% static 'rank4.png' %}" alt="no-image"><span
+                            class="r4_univ">EWHA</span></li>
+                </ol>
+            </section>
+
+
+            <div class="NavBar">
+                <img src="{% static 'mapB.svg' %}" />
+                <img src="{% static 'graphL.svg' %}" />
+                <img src="{% static 'questL.svg' %}" />
+                <div id="profile">
+                </div>
+            </div>
+        </div>
+        <div class="univ_box">
+            <span class="univ_title">YONSEI
+                UNIVERSITY</span>
+            <span class="percentage">78%</span>
+            <img class="univ_img" src="{% static 'trashcan_Y.png' %}" alt="">
+
+        </div>
+
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'js/ranking.js' %}"></script>
+
+</html>

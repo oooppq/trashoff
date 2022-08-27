@@ -1,0 +1,135 @@
+@font-face {
+    font-family: Campton;
+    src: url('../static/fonts/Campton-BoldDEMO.otf') format('opentype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Sandol;
+    src: url('../static/fonts/AppleSDGothicNeoM.ttf');
+}
+
+.title {
+
+
+
+    padding-left: 27px;
+    font-family: 'Campton';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 61px;
+
+    color: #63EA76;
+}
+
+.onethree {
+
+    position: absolute;
+    width: 57px;
+    height: 61px;
+    left: 42px;
+    top: 126px;
+
+
+    font-family: 'Campton';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 61px;
+    letter-spacing: 0.07em;
+
+    color: #000000;
+}
+
+.onefour {
+
+    position: absolute;
+    width: 61px;
+    height: 61px;
+    left: 124px;
+    top: 126px;
+
+    font-family: 'Campton';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 61px;
+    letter-spacing: 0.07em;
+
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.four {
+    position: absolute;
+    width: 32px;
+    height: 61px;
+    left: 65px;
+    top: 380px;
+
+    font-family: 'Campton';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 61px;
+    letter-spacing: 0.07em;
+
+    color: #000000;
+}
+
+.seven {
+    position: absolute;
+    width: 26px;
+    height: 61px;
+    left: 107px;
+    top: 380px;
+
+    font-family: 'Campton';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 61px;
+    letter-spacing: 0.07em;
+
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.quest_box {
+    position: absolute;
+    width: 316px;
+    height: 246px;
+    left: 37px;
+    top: 210px;
+}
+
+
+
+
+.clear {
+    position: absolute;
+    width: 300px;
+    height: 16px;
+    left: 55px;
+    top: 470px;
+
+    font-family: 'Sandoll';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    text-decoration: line-through;
+    color: #000000;
+
+}
+
+.NavBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 110px;
+    border-top: 4px solid #61df72;
+    width: 100%;
+}

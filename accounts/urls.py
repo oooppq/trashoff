@@ -10,4 +10,5 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('mypage/', views.myPage, name='mypage'),
     path('profile-modify', views.profileModify, name='profile-modify'),
+    path('congrats/', views.congrats, name='congrats'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

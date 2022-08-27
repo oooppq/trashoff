@@ -1,0 +1,83 @@
+@font-face {
+    font-family: Campton;
+    src: url('../static/fonts/Campton-BoldDEMO.otf') format('opentype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Sandol;
+    src: url('../static/fonts/AppleSDGothicNeoM.ttf');
+}
+
+.login_title {
+    position: absolute;
+    width: 115px;
+    height: 61px;
+    left: 35px;
+    top: 50px;
+
+    font-family: 'Campton';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 61px;
+
+    color: #63EA76;
+}
+
+
+.login_logo {
+    position: absolute;
+    width: 216.2px;
+    height: 208.01px;
+    left: 151px;
+    top: 300px;
+}
+
+.email_box {
+    position: absolute;
+    left: 33px;
+    top: 560px;
+    width: 325px;
+
+    font-family: Sandol;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+
+
+    color: #000000;
+}
+
+.email {
+    padding-left: 8px;
+
+}
+
+button {
+    width: 325px;
+    height: 57px;
+    left: 32px;
+    top: 723px;
+    margin-top: 20px;
+    background: #61DF72;
+    border-radius: 8px;
+    font-family: Sandol;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    border: 1px solid white;
+
+    letter-spacing: 0.12em;
+
+    color: #FFFFFF;
+}
+
+button:hover {
+    background-color: #FFFFFF;
+    color: #61DF72;
+    border: 1.5px solid #61DF72;
+
+}
