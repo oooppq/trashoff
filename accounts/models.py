@@ -8,6 +8,6 @@ class User(AbstractUser):
     university = models.CharField(max_length=20, null=True)
     cleanTrashNumber = models.IntegerField(default=0)
     level = models.IntegerField(default=1)
+    comments = models.TextField(null=True)
     date = models.DateTimeField(auto_now_add=True, null=True)
-    
     

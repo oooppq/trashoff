@@ -41,3 +41,6 @@ def register(request):
                                         university=university,
                                         )
         return redirect('home')
+    
+def myPage(request):
+    return render(request, 'my-page.html')
