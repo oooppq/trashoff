@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>trash OFF</title>
+  </head>
+  <body>
+    <div class="Wrapper">
+      <div class="Text" style="font-family: Campton">
+        <span style="color: #63ea76">Congratulations!</span>
+        <span style="color: rgba(99, 234, 118, 0.8)">Congratulations!</span>
+        <span style="color: rgba(99, 234, 118, 0.6)">Congratulations!</span>
+        <span style="color: rgba(99, 234, 118, 0.4)">Congratulations!</span>
+      </div>
+      <img class="Logo" src="../static/Logo2.svg" />
+      <div class="Button">시작하기</div>
+    </div>
+  </body>
+  <style>
+    @font-face {
+      font-family: Campton;
+      src: url('../static/fonts/Campton-BoldDEMO.otf') format('opentype');
+      font-weight: bold;
+    }
+    @font-face {
+      font-family: Sandol;
+      src: url('../static/fonts/AppleSDGothicNeoM.ttf');
+    }
+    .Wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .Text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 80px;
+      margin-bottom: 30px;
+      font-size: 44px;
+    }
+
+    .Logo {
+      margin: 0 auto;
+      width: 250px;
+    }
+
+    .Button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 325px;
+      height: 57px;
+      border: none;
+      border-radius: 10px;
+      background-color: #63ea76;
+      color: white;
+      font-family: Sandol;
+      font-size: 18px;
+      margin-top: 80px;
+    }
+  </style>
+</html>

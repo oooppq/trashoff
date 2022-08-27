@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>trash OFF</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="Wrapper">
+      <div class="LogoWrapper">
+        <img src="../static/Logo2.svg" />
+      </div>
+      <div class="TextWrapper">
+        <span>trashoff -</span>
+        <br />
+        <span>comfortable</span>
+        <br />
+        <span>offline</span>
+      </div>
+      <div class="LoginBox">
+        <div id="login">로그인</div>
+        <div id="signup">회원가입</div>
+      </div>
+    </div>
+  </body>
+  <style>
+    @font-face {
+      font-family: Campton;
+      src: url('../static/fonts/Campton-BoldDEMO.otf') format('opentype');
+      font-weight: bold;
+    }
+    @font-face {
+      font-family: Sandol;
+      src: url('../static/fonts/AppleSDGothicNeoM.ttf');
+    }
+    .Wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    .LogoWrapper {
+      margin-top: 50px;
+    }
+
+    .TextWrapper {
+      display: inline;
+      position: absolute;
+      top: 350px;
+      right: 10px;
+
+      font-family: Campton;
+      font-size: 40px;
+      color: #63ea76;
+    }
+
+    .LoginBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 600px;
+      left: 0;
+      width: 100%;
+      font-family: 'Sandol';
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    #login {
+      display: flex;
+      width: 70%;
+      padding: 12px;
+      border: solid 2px #63ea76;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      background-color: #63ea76;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    #signup {
+      display: flex;
+      width: 70%;
+      padding: 12px;
+      border: solid 2px #63ea76;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      color: #63ea76;
+      cursor: pointer;
+    }
+  </style>
+</html>
