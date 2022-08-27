@@ -7,10 +7,10 @@
     {% for quest in quests %}
         <section>
             <a href="{% url 'quest_detail' quest.id %}">
-                <p>{{ quest.place_id }}</p>
-                <p>{{ quest.title }}</p>
+                <h2>{{ quest.title }}</h2>
                 <p>{{ quest.content }}</p>
-                <p>{{ quest.reward }}</p>
+                <p>{{ user.cleanTrashNumber }} / {{ quest.goal }}</p>
+                
             </a>
         </section>
     {% endfor %}

@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Quest
+from .models import Quest, QuestUser
 
 # Create your views here.
 def quest_home(request):
     quests = Quest.objects.all()
-    
+    user = request.user
+    # quest_home.html에서 if문에서 레벨 비교, 현재 양과 목표량 비교 프런트에서..?
     return render(request, 'quest_home.html', {'quests': quests})
 
 def quest_detail(request, quest_id):

@@ -21,5 +21,5 @@ class Trashcan(models.Model):
 
 class Throwing(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)  # User ID
-    trashcan_id = models.ForeignKey(Place, on_delete=models.CASCADE)  # 쓰레기통 ID
+    trashcan_id = models.ForeignKey(Trashcan, on_delete=models.CASCADE)  # 쓰레기통 ID
     time = models.DateTimeField(auto_now_add=True)  # 쓰레기를 버린 시간
