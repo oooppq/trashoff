@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Quest
 
 # Create your views here.
-def quest(request):
+def quest_home(request):
     quests = Quest.objects.all()
     return render(request, 'quest.html', {'quests': quests})
 

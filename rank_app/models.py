@@ -24,6 +24,9 @@ class University(models.Model):
     student_num = models.IntegerField(default=0, null=True) # 학교에 속한 학생 인원
     throw_num = models.IntegerField(default=0, null=True) # 쓰레기 버린 횟수
 
+    def __str__(self):
+        return self.name
+
 
 class Throwing(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)  # User ID

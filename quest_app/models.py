@@ -8,5 +8,8 @@ class Quest(models.Model):
     place_id = models.ForeignKey(Place, on_delete=models.CASCADE) # 퀘스트가 이뤄지는 장소
     title = models.CharField(max_length=30) # 퀘스트 제목
     content = models.CharField(max_length=200) # 퀘스트 설명
-    level = models.IntegerField(default=0)
-    reward = models.CharField(max_length=30)
+    level = models.IntegerField(default=0) # 퀘스트 참가 최소 레벨
+    reward = models.CharField(max_length=30) # 퀘스트 보상
+
+    def __str__(self):
+        return self.title
