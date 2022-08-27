@@ -13,7 +13,4 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('mypage/', views.myPage, name='mypage'),
     path('profile-modify', views.profileModify, name='profile-modify'),
-    path('join', views.join, name='join'),
-    path('join2', views.join2, name='join2'),
-    path('join3', views.join3, name='join3'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

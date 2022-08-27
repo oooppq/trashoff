@@ -4,6 +4,6 @@ from accounts.models import User
 # Create your views here.
 
 
-def univ_rank(request):
+def ranking(request):
     univs = University.objects.filter().order_by('-throw_num')
-    return render(request, 'univ_rank.html', {'univs': univs})
+    return render(request, 'ranking.html', {'univs': univs})

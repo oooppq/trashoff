@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/rank.css' %}">
+
+  </head>
+
+  <body>
+    <div class="container">
+      <section class="ranking">
+        <img class="logo" src="{% static 'img/symbol 1.png' %}" alt="no-image">
+        <span class="title_ranking">Ranking</span>
+        <span class="title_sinchon">sinchon</span>
+      </section>
+      <section class="ranking_box">
+        <ol>
+          <li class="r1">
+            <img class="color_img1" src="{% static 'img/rank1.png' %}" alt="no-image">
+            <span class="r1_univ">HONGIK</span>
+          </li>
+          <li class="r2"><img class="color_img2" src="{% static 'img/rank2.png' %}" alt="no-image">
+            <span class="r2_univ">SOGANG</span></li>
+          <li class="r3">
+            <img class="color_img3" src="{% static 'img/rank3.png' %}" alt="no-image">
+            <span class="r3_univ">YONSEI</span></li>
+          <li class="r4">
+            <img class="color_img4" src="{% static 'img/rank4.png' %}" alt="no-image">
+            <span class="r4_univ">EWHA</span></li>
+        </ol>
+      </section>
+
+      <div class="NavBar">
+        <a href=""><img src="{% static 'img/mapL.svg' %}"/></a>
+        <a href="{% url 'rank' %}"><img src="{% static 'img/graphB.svg' %}"/></a>
+        <a href="{% url 'quest' %}"><img src="{% static 'img/questL.svg' %}"/></a>
+        <a href="">
+          <div id="profile">
+            {% if user.is_authenticated %}
+              <img src="{{ user.photo.url }}" alt="">
+            {% else %}
+              <img src="{% static 'img/no-profile-image.png' %}" alt="">
+            {% endif %}
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="univ_box">
+      <span class="univ_title">YONSEI UNIVERSITY</span>
+      <span class="percentage">78%</span>
+      <img class="univ_img" src="{% static 'img/trashcan_Y.png' %}" alt="">
+
+    </div>
+
+  </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="{% static 'js/ranking.js' %}"></script>
+
+</html>

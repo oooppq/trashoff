@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/quest.css' %}">
+  </head>
+
+  <body>
+    <div class="quest">
+      <p class="title">
+        Quest</p>
+      <span class="onethree">13</span>
+      <span class="onefour">14</span>
+      <div class="quest_box">
+        <img src="{% static 'img/questbox.png' %}" alt="no-image">
+      </div>
+      <div class="clear">
+        <p>처음으로 쓰레기 수거 인증하기</p>
+        <p>2일 연속으로 쓰레기 수거 인증하기</p>
+        <p>하루에 3번 각기 다른 쓰레기통으로 쓰레기 수거 인증하기</p>
+        <p>하루에 6번 각기 다른 쓰레기통으로 쓰레기 수거 인증하기</p>
+        <p>3일 연속으로 쓰레기 수거 인증하기</p>
+        <p>3일 연속으로 쓰레기 수거 인증하기</p>
+      </div>
+
+    </div>
+    <div class="NavBar">
+      <a href=""><img src="{% static 'img/mapL.svg' %}"/></a>
+      <a href="{% url 'rank' %}"><img src="{% static 'img/graphL.svg' %}"/></a>
+      <a href="{% url 'quest' %}"><img src="{% static 'img/questB.svg' %}"/></a>
+      <a href="">
+        <div id="profile">
+          {% if user.is_authenticated %}
+            <img src="{{ user.photo.url }}" alt="">
+          {% else %}
+            <img src="{% static 'img/no-profile-image.png' %}" alt="">
+          {% endif %}
+        </div>
+      </a>
+
+    </body>
+
+  </html>

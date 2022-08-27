@@ -73,14 +73,5 @@ def profileModify(request):
             user.university = request.POST['university']
         user.comments = request.POST['comments']
         user.save()
-        print(user.password)
         return redirect('mypage')
     
-def join(request):
-    return render(request, 'join.html')
-
-def join2(request):
-    return render(request, 'join2.html')
-
-def join3(request):
-    return render(request, 'join3.html')
