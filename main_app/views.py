@@ -23,6 +23,7 @@ def get_trashcans(request, place_id=1):
 def increase_trash(request, place_id=1):
     try:
         user = request.user
+
         user.cleanTrashNumber += 1
         user.save()
 
@@ -32,11 +33,14 @@ def increase_trash(request, place_id=1):
 
     try:
         university = University.objects.get(name=user.university)
+
         university.throw_num += 1
         university.save()
         print("university 횟수 :", university.throw_num)
     except Exception as error:
         print(error, ": 사용자의 소속 대학이 없습니다.")
+
+    Throwing.objects.create(user_id=request.user)
 
     map_page = "map" + str(place_id) + ".html"
     return render(request, map_page)
