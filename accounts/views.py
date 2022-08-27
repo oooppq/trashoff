@@ -4,6 +4,13 @@ from django.contrib import auth
 from accounts.models import User
 
 # Create your views here.
+
+def init(request):
+    return render(request, 'logo.html')
+
+def loginIndex(request):
+    return render(request, 'login-index.html')
+
 def login(request):
     if request.method == 'GET':
         return render(request, 'login.html')
@@ -13,13 +20,16 @@ def login(request):
         user = auth.authenticate(request, username=id, password=pw)
         if user != None:
             auth.login(request, user)
-            return redirect('home')
+            return redirect('congrats')
         else:
             return render(request, 'login.html')
         
 def logout(request):
     auth.logout(request)
     return redirect('home')
+
+def congrats(request):
+    return render(request, 'congrats.html')
 
 def register(request):
     if request.method == 'GET':
@@ -65,3 +75,12 @@ def profileModify(request):
         user.save()
         print(user.password)
         return redirect('mypage')
+    
+def join(request):
+    return render(request, 'join.html')
+
+def join2(request):
+    return render(request, 'join2.html')
+
+def join3(request):
+    return render(request, 'join3.html')

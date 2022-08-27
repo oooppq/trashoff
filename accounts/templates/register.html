@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,25 +7,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
   </head>
 
   <body>
-    <form action="{% url 'register' %}" method='POST' enctype="multipart/form-data">
-      {% csrf_token %}
-      <input type="text" placeholder='아이디' name='username'><br>
-      <input type="password" placeholder='비밀번호' name='password'><br>
-      <input type="password" placeholder='재입력' name='again'><br>
-      <input type="text" placeholder='example@email.com' name='email'><br>
-      <input type="text" placeholder='닉네임' name='nickname'><br>
-      <input type="file" name="photo"><br>
-      <select name="university">
-        <option value="서강">서강대학교</option>
-        <option value="이화">이화여자대학교</option>
-        <option value="연세">연세대학교</option>
-        <option value="홍익">홍익대학교</option>
-      </select><br>
-      <input type="submit">
-    </form>
+    <section class="join">
+      <p class="membership">join</p>
+      <p class="membership mt-5">
+        membership!</p>
+      <img class="login_logo" src="{% static 'img/Group 5.png'%}" alt="">
+      <img class="logo1" src="{% static 'img/1.png'%}" alt="">
+      <img class="logo2" src="{% static 'img/2.png'%}" alt="" style='display: none;'>
+      <img class="logo3w" src="{% static 'img/3.png'%}" alt="" style='display: none;'>
+      <img class="logo3" src="{% static 'img/3.png'%}" alt="">
+    </section>
+    <section class="email_box">
+      <form action="{% url 'register' %}" method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class='group1'>
+          <span class="email">이름</span><input type="text" placeholder='아이디' name='username'><br>
+          <hr>
+          <span class="email">이메일</span><input type="text" placeholder='example@email.com' name='email'><br>
+          <hr>
+          <span class="email">비밀번호</span><input type="password" placeholder='비밀번호' name='password'><br>
+          <hr>
+          <span class="email">비밀번호 확인</span><input type="password" placeholder='재입력' name='again'><br>
+          <hr>
+        </div>
+        <div class='group2' style='display:none;'>
+          <span class="email">별명</span><input type="text" placeholder='닉네임' name='nickname'><br>
+          <hr>
+          <span class="email">학교</span>
+          <select name="university" class='dropdown'>
+            <option value="서강">서강대학교</option>
+            <option value="이화">이화여자대학교</option>
+            <option value="연세">연세대학교</option>
+            <option value="홍익">홍익대학교</option>
+          </select><br>
+          <hr>
+        </div>
+        <div class='group3' style='display:none;'>
+            <p>프로필 사진</p>
+            
+            <label for="profile-img">
+              <img class="click" src="{% static 'img/click.png'%}" alt="">
+          </label>
+            <input id='profile-img' type="file" name="photo" style='display:none;'><br>
+        </div>
+        <button class='next-button' type='button'>계속하기</button>
+        {% comment %} <input type="submit"> {% endcomment %}
+      </form>
+    </section>
+    <script src="{% static 'js/register.js' %}"></script>
   </body>
 
 </html>
