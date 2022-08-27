@@ -12,10 +12,12 @@ class Place(models.Model):
     def __str__(self):
         return str(self.name)
 
+
 class Trashcan(models.Model):
+    trashcan_number = models.IntegerField()  # 쓰레기통 번호
     place_id = models.ForeignKey(
         Place, on_delete=models.CASCADE)  # 쓰레기통이 위치한 장소
-    trashcan_number = models.IntegerField()  # 쓰레기통 번호
+
 
 class Throwing(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)  # User ID
