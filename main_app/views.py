@@ -10,15 +10,33 @@ def home(request):
     return render(request, 'index.html')
 
 
-def get_trashcans(request, map_number):
-    trashcans = Trashcan.objects.filter(map_number=map_number)
-    map_page = "map" + str(map_number) + ".html"
+def get_trashcans(request, place_id=1):
+    trashcans = Trashcan.objects.filter(place_id=place_id)
+
+    if trashcans.exists() is False:
+        print("쓰레기통 없음")
+
+    map_page = "map" + str(place_id) + ".html"
     return render(request, map_page, {'trashcans': trashcans})
 
-def increase_trash(request):
-    user = request.user
-    
-    user.cleanTrashNumber += 1
-    
-    university = University.objects.get(name=user.university)
-    university.throw_num += 1
+
+def increase_trash(request, place_id=1):
+    try:
+        user = request.user
+        user.cleanTrashNumber += 1
+        user.save()
+
+        print("user 횟수 :", user.cleanTrashNumber)
+    except Exception as error:
+        print(error, ": 사용자를 찾을 수 없습니다.")
+
+    try:
+        university = University.objects.get(name=user.university)
+        university.throw_num += 1
+        university.save()
+        print("university 횟수 :", university.throw_num)
+    except Exception as error:
+        print(error, ": 사용자의 소속 대학이 없습니다.")
+
+    map_page = "map" + str(place_id) + ".html"
+    return render(request, map_page)

@@ -10,7 +10,7 @@ class Place(models.Model):
     name = models.CharField(max_length=50)  # 장소 이름
 
     def __str__(self):
-        return str(self.name)
+        return str(self.id)
 
 
 class Trashcan(models.Model):
