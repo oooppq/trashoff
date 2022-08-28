@@ -11,6 +11,7 @@
 
   <body>
     <div class="Container">
+      <a class="next" href="{% url 'get_trashcans' 2%}"></a>
       <div class="MapWrapper">
         <img id="map" src="{% static 'img/map1.png' %}">
         <div class="modal hidden">
@@ -47,7 +48,7 @@
         <a href="{% url 'quest' %}"><img src="{% static 'img/questL.svg' %}"/></a>
         <a href="{% url 'mypage' %}">
           <div id="profile">
-            {% if user.is_authenticated %}
+            {% if user.photo %}
               <img src="{{ user.photo.url }}" alt="">
             {% else %}
               <img src="{% static 'img/no-profile-image.png' %}" alt="">
@@ -68,21 +69,21 @@
           $(".modal").show();
           $(".checkTrue").click(function () {
             $(".modal").hide();
-            $('.icon1').attr('src', '../../static/img/true.svg');
+            $('.icon1').attr('src', '{% static 'img/true.svg' %}');
           });
         });
         $(".modalButton2").click(function () {
           $(".modal").show();
           $(".checkTrue").click(function () {
             $(".modal").hide();
-            $('.icon2').attr('src', '../../static/img/true.svg');
+            $('.icon2').attr('src', '{% static 'img/true.svg' %}');
           });
         });
         $(".modalButton3").click(function () {
           $(".modal").show();
           $(".checkTrue").click(function () {
             $(".modal").hide();
-            $('.icon3').attr('src', '../../static/img/true.svg');
+            $('.icon3').attr('src', '{% static 'img/true.svg' %}');
           });
         });
         $(".closeModal").click(function () {
@@ -99,7 +100,7 @@
     <style>
       @font-face {
         font-family: Sandol;
-        src: url({% static 'fonts/AppleSDGothicNeoM.ttf' %});
+        src: url(' { % static 'fonts/AppleSDGothicNeoM.ttf'% } ');
       }
 
       * {
@@ -203,6 +204,21 @@
         color: white;
         border-radius: 4px;
       }
+
+      .next{
+        position: absolute;
+        z-index: 500;
+        top: 600px;
+        right: 0;
+        height: 100px;
+        width: 100px;
+        border: none;
+        background-color: transparent;
+        text-decoration: none;
+        outline:none;
+        -webkit-tap-highlight-color:rgba(0,0,0,0);
+        
+    }
     </style>
 
   </html>

@@ -20,7 +20,7 @@ def get_trashcans(request, place_id=1):
     return render(request, map_page, {'trashcans': trashcans})
 
 
-def increase_trash(request, place_id=1):
+def increase_trash(request, place_id=1, trashcan_id=1):
     try:
         user = request.user
 
@@ -40,7 +40,8 @@ def increase_trash(request, place_id=1):
     except Exception as error:
         print(error, ": 사용자의 소속 대학이 없습니다.")
 
-    Throwing.objects.create(user_id=request.user)
+    trashcan = Trashcan.objects.get(place_id=place_id, id=trashcan_id)
+    Throwing.objects.create(user_id=request.user, trashcan_id=trashcan)
 
     map_page = "map" + str(place_id) + ".html"
     return render(request, map_page)
