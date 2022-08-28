@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% load static %}
+{% load static %}
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,9 +10,9 @@
 
   <body>
     <div class="Container">
-      <a class="next" href="{% url 'get_trashcans' 3%}"></a>
+        <a class="next" href="{% url 'get_trashcans' 4%}"></a>
       <div class="MapWrapper">
-        <img id="map" src="{% static 'img/map2.png' %}" />
+        <img id="map" src="{% static 'img/map3.png' %}">
         <div class="modal hidden">
           <div class="modal__overlay"></div>
           <div class="modal__content">
@@ -25,19 +25,13 @@
         </div>
       </div>
       <button class="modalButton1">
-        <div class="False" style="top: 10px">
-          <img class="icon1" src="{% static 'img/false.svg' %}" />
-        </div>
-      </button>
-
-      <button class="modalButton2">
-        <div class="False" style="right: 200px">
-          <img class="icon2" src="{% static 'img/false.svg' %}" />
+        <div class="False" style="top: 200px">
+            <img class="icon1" src="{% static 'img/false.svg' %}"/>
         </div>
       </button>
       <button class="modalButton3">
-        <div class="False" style="right: 70px; top: 170px">
-          <img class="icon3" src="{% static 'img/false.svg' %}" />
+        <div class="False" style="right: 50px; top: 480px">
+            <img class="icon3" src="{% static 'img/false.svg' %}"/>
         </div>
       </button>
 
@@ -107,7 +101,7 @@
       font-family: Sandol;
       font-weight: 500;
     }
-    
+
     .next{
         position: absolute;
         z-index: 500;
@@ -217,8 +211,6 @@
       color: white;
       border-radius: 4px;
     }
-
-    
   </style>
 
 </html>
